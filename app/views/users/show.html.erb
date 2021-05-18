@@ -27,10 +27,12 @@
       <h2 class="page-heading">
         <%= "#{@user.name}さんのプロトタイプ"%>
       </h2>
+      <% if current_user.id == @user.id%>
       <div class="user__card">
       <%= render partial: "prototypes/prototype", collection: @prototypes %>
         <%# 部分テンプレートでそのユーザーが投稿したプロトタイプ投稿一覧を表示する %>
       </div>
+      <% end %>
     </div>
   </div>
 </div>
