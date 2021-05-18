@@ -6,7 +6,8 @@ def create
   if @comment.save
     redirect_to prototype_path(@prototype)
   else
-    render :show
+    @comments = @prototype.comments.includes(:user)
+    render "prototypes/show"
   end
 end
 
